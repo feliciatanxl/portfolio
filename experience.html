@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiences</title>
+    <title>Experiences | Felicia Tan</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets\logo.png">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
 
 <body>
     <div class="scroll-progress"></div>
 
-    <!-- NAV -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">'FT<span class="cursor-blink">_</span>'</a>
-            <ul class="nav-links">
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="experience.html" class="active">Experiences</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="index.html#contact" class="nav-btn">Contacts</a></li>
@@ -25,9 +30,8 @@
         </div>
     </nav>
 
-    <!-- HEADER -->
     <div class="container">
-        <header class="section-header" style="text-align: center; margin-top: 60px; margin-bottom: 80px;">
+        <header class="section-header" style="text-align: center; margin-top: 60px; margin-bottom: 40px;">
             <h1 class="section-title">Career <span>./log</span></h1>
             <p class="contact-text">
                 A compact overview of my technical journey and professional background.
@@ -35,12 +39,9 @@
         </header>
     </div>
 
-    <!-- TIMELINE -->
     <section class="timeline">
-
         <div class="timeline-rail"></div>
 
-        <!-- ===== 2022 ===== -->
         <div class="timeline-block">
             <div class="timeline-marker">
                 <span class="year">2022</span>
@@ -48,7 +49,6 @@
 
             <div class="timeline-card">
                 <div class="exp-bento-card">
-
                     <div class="exp-content">
                         <div class="exp-top">
                             <img src="assets/w360_logo.png" alt="W360 Group" class="comp-logo" width="100">
@@ -73,9 +73,7 @@
 
                     <div class="exp-preview-window">
                         <div class="window-bar">
-                            <span class="win-dot red"></span>
-                            <span class="win-dot yellow"></span>
-                            <span class="win-dot green"></span>
+                            <div class="dots"><span class="win-dot red"></span><span class="win-dot yellow"></span><span class="win-dot green"></span></div>
                             <span class="filename">intern_logs.png</span>
                         </div>
                         <div class="preview-grid">
@@ -83,12 +81,10 @@
                             <img src="assets/intern2.jpg" alt="Internship Work">
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
 
-        <!-- ===== EARLY 2023 ===== -->
         <div class="timeline-block">
             <div class="timeline-marker">
                 <span class="year">Early 2023</span>
@@ -96,12 +92,15 @@
 
             <div class="timeline-card">
                 <div class="exp-bento-card">
-
+                    <div class="exp-content">
+                        <div class="exp-top">
+                            <img src="assets/w360_logo.png" alt="W360 Group" class="comp-logo" width="100">
+                        </div>
                         <div class="exp-body">
                             <h3>Digital Marketing Executive (Contract)</h3>
                             <p class="comp-name">W360 Group Pte Ltd</p>
                             <ul class="exp-list">
-                                <li><i class="fas fa-terminal"></i> Architected EDMs and sales decks for<strong>NTUC LearningHub</strong>.</li>
+                                <li><i class="fas fa-terminal"></i> Architected EDMs and sales decks for <strong>NTUC LearningHub</strong>.</li>
                                 <li><i class="fas fa-terminal"></i> Developed WordPress mockups and managed full-stack maintenance.</li>
                                 <li><i class="fas fa-terminal"></i> Optimized SEO/SEM growth via Google Ads campaigns.</li>
                             </ul>
@@ -111,16 +110,13 @@
                             <span>WordPress</span>
                             <span>SEO / SEM</span>
                             <span>Campaign Strategy</span>
-                            <span>Canva</span>
                             <span>HTML/CSS</span>
                         </div>
                     </div>
 
                     <div class="exp-preview-window">
                         <div class="window-bar">
-                            <span class="win-dot red"></span>
-                            <span class="win-dot yellow"></span>
-                            <span class="win-dot green"></span>
+                            <div class="dots"><span class="win-dot red"></span><span class="win-dot yellow"></span><span class="win-dot green"></span></div>
                             <span class="filename">ntuc_preview.jpg</span>
                         </div>
                         <div class="preview-grid">
@@ -128,29 +124,47 @@
                             <img src="assets/work2.jpg" alt="Work Preview">
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <p>© 2026 Felicia Tan. Handcrafted with &lt;code /&gt;</p>
     </footer>
 
-    <!-- SCRIPTS -->
     <script>
         /* Scroll progress bar */
         window.addEventListener("scroll", () => {
             const scrollTop = document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            document.querySelector(".scroll-progress").style.width =
-                (scrollTop / height) * 100 + "%";
+            const progress = document.querySelector(".scroll-progress");
+            if (progress) progress.style.width = (scrollTop / height) * 100 + "%";
         });
 
-        /* Timeline reveal */
+        /* Hamburger Menu Logic */
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        /* Close menu when clicking a link */
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            });
+        });
+
+        /* Timeline reveal animation */
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
@@ -159,13 +173,12 @@
                     }
                 });
             },
-            { threshold: 0.2 }
+            { threshold: 0.1 }
         );
 
         document.querySelectorAll(".timeline-card").forEach(card => {
             observer.observe(card);
         });
     </script>
-
 </body>
 </html>

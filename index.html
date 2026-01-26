@@ -13,10 +13,15 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">'FT<span class="cursor-blink">_'</span></a>
-            <ul class="nav-links">
-                <li><a href=experience.html>Experiences</a></li>
-                <li><a href=projects.html>Projects</a></li>
+            <a href="index.html" class="logo">'FT<span class="cursor-blink">_</span>'</a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="experience.html">Experiences</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="#contact" class="nav-btn">Contacts</a></li>
             </ul>
         </div>
@@ -122,6 +127,28 @@
                 currentSlide = (currentSlide + 1) % slides.length;
                 updateSlider(currentSlide);
             }, 5000);
+        });
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+
+            // Switch icon between 'Bars' and 'X'
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Close menu when a link is clicked (useful for #contact)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            });
         });
     </script>
 </body>
