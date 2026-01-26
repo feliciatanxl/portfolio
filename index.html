@@ -52,6 +52,52 @@
             </div>
         </header>
 
+        <section id="testimonials" class="section">
+            <h2 class="section-title">Testimonial <span>./reviews</span></h2>
+            <div class="testimonial-container">
+                <div class="terminal-window review-window">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">ls -l documents/testimonials</span>
+                        <div class="slider-controls">
+                            <span class="current">01</span> / <span class="total">03</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slider min-view">
+                        <div class="review-slide active">
+                            <div class="review-meta no-desc">
+                                <div class="reviewer-info">
+                                    <span class="v">const</span> <span class="k">reviewer</span> = <span class="s">"Project Manager @ W360, Adeline Tong"</span>;
+                                </div>
+                                <a href="assets/08_FeliciaTan_CompanyTestimonial.pdf" download class="pdf-download-btn">
+                                    <i class="fas fa-file-pdf"></i> Download PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="review-slide">
+                            <div class="review-meta no-desc">
+                                <div class="reviewer-info">
+                                    <span class="v">const</span> <span class="k">reviewer</span> = <span class="s">"Institute of Technical Education, Peter Leow (Class Advisor)"</span>;
+                                </div>
+                                <a href="assets/LETTER OF RECOMMENDATION FOR Felicia Tan Xiu Li.pdf" download class="pdf-download-btn">
+                                    <i class="fas fa-file-pdf"></i> Download PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="terminal-footer">
+                        <button id="prevBtn" class="term-nav-btn"><i class="fas fa-chevron-left"></i> prev</button>
+                        <button id="nextBtn" class="term-nav-btn">next <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="skills" class="section">
             <h2 class="section-title">Technical <span>Stack</span></h2>
             <div class="skills-grid">
@@ -91,64 +137,83 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- Testimonial Slider Logic ---
             const slides = document.querySelectorAll('.review-slide');
-            const pdfLinks = document.querySelectorAll('.pdf-link');
             const nextBtn = document.getElementById('nextBtn');
             const prevBtn = document.getElementById('prevBtn');
             const currentText = document.querySelector('.current');
+            const totalText = document.querySelector('.total');
 
             let currentSlide = 0;
 
+            // Initialize Total Count (e.g., / 03)
+            if (totalText && slides.length > 0) {
+                totalText.innerText = slides.length.toString().padStart(2, '0');
+            }
+
             function updateSlider(index) {
+                if (slides.length === 0) return;
+
                 // Update Slides
                 slides.forEach(s => s.classList.remove('active'));
                 slides[index].classList.add('active');
 
-                // Update PDF Links
-                pdfLinks.forEach(link => link.classList.remove('active'));
-                pdfLinks[index].classList.add('active');
-
-                // Update Counter
-                currentText.innerText = (index + 1).toString().padStart(2, '0');
+                // Update Counter Text (01, 02, etc.)
+                if (currentText) {
+                    currentText.innerText = (index + 1).toString().padStart(2, '0');
+                }
             }
 
-            nextBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                updateSlider(currentSlide);
-            });
+            // Event Listeners for Slider
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    updateSlider(currentSlide);
+                });
+            }
 
-            prevBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                updateSlider(currentSlide);
-            });
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    updateSlider(currentSlide);
+                });
+            }
 
-            // Auto Play (Optional - 5 seconds)
+            // Auto Play every 5 seconds
             setInterval(() => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                updateSlider(currentSlide);
+                if (slides.length > 0) {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    updateSlider(currentSlide);
+                }
             }, 5000);
-        });
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
 
-            // Switch icon between 'Bars' and 'X'
-            const icon = menuToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
+            // --- Navbar / Hamburger Logic ---
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+
+                    // Switch icon between 'Bars' and 'X'
+                    const icon = menuToggle.querySelector('i');
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.replace('fa-bars', 'fa-times');
+                    } else {
+                        icon.classList.replace('fa-times', 'fa-bars');
+                    }
+                });
+
+                // Close menu when a link is clicked
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        const icon = menuToggle.querySelector('i');
+                        if (icon) icon.classList.replace('fa-times', 'fa-bars');
+                    });
+                });
             }
-        });
-
-        // Close menu when a link is clicked (useful for #contact)
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
-            });
         });
     </script>
 </body>
