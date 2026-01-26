@@ -22,83 +22,86 @@
         </div>
     </nav>
 
-    <div class="container" id="home">
-        <header class="section-header" style="text-align: center; margin-top: 40px; margin-bottom: 60px;">
-            <h1 class="section-title">Career <span>./log</span></h1>
-            <p class="contact-text">A compact overview of my technical journey and professional background.</p>
+    <div class="container">
+        <header class="section-header" style="text-align: center; margin-top: 60px; margin-bottom: 60px;">
+            <h1 class="section-title">Projects <span>./bin</span></h1>
+            <p class="contact-text">A collection of technical deployments and creative builds.</p>
         </header>
 
-        <section class="experience-grid">
-
-            <div class="exp-card-bento">
-                <div class="exp-img">
-                    <img src="https://via.placeholder.com/150" alt="Company Logo">
+        <section class="projects-grid">
+            <div class="project-card large">
+                <div class="window-bar">
+                    <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                    <div class="file-name">whatsapp_bot.py</div>
                 </div>
-                <div class="exp-info">
-                    <span class="card-label">2026 - Present</span>
-                    <h3>Software Engineer Intern</h3>
-                    <p class="comp-name">@ Endeavour Digital</p>
-                    <p class="exp-desc">Optimizing MySQL schemas and building student management modules with React.</p>
-                    <div class="tech-stack"><span>SQL</span><span>React</span><span>Node.js</span></div>
+                <div class="window-body">
+                    <div class="project-info">
+                        <span class="status-tag success">200 OK</span>
+                        <h3>WhatsApp AI Chatbot</h3>
+                        <p>An intelligent agent built with Flask and OpenAI API to automate order fulfillment and sales inquiries for small businesses.</p>
+
+                        <div class="code-snippet">
+                            <pre><code><span class="k">import</span> openai
+<span class="k">from</span> flask <span class="k">import</span> Flask
+
+<span class="v">app</span> = Flask(<span class="s">"WhatsApp_AI"</span>)
+<span class="v">response</span> = openai.ChatCompletion.create(
+                            <span class="v">model</span>=<span class="s">"gpt-4"</span>,
+                            <span class="v">messages</span>=[<span class="v">user_query</span>]
+)</code></pre>
+                        </div>
+                        <a href="https://github.com/feliciatanxl/WDP-WS-AI-2025" target="_blank" class="terminal-btn">
+                            <span class="prompt">$</span> git checkout <span class="repo-name">source_code</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="exp-card-bento">
-                <div class="exp-img">
-                    <img src="https://via.placeholder.com/150" alt="Freelance Project">
+            <div class="project-card">
+                <div class="window-bar">
+                    <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                    <div class="file-name">data_analytics.pbix</div>
                 </div>
-                <div class="exp-info">
-                    <span class="card-label">2025</span>
-                    <h3>Freelance Developer</h3>
-                    <p class="comp-name">@ Happy Farm</p>
-                    <p class="exp-desc">Built an automated WhatsApp alert system and e-commerce dashboard.</p>
-                    <div class="tech-stack"><span>Python</span><span>Flask</span><span>API</span></div>
+                <div class="window-body">
+                    <h3>Cost of Living Dashboard</h3>
+                    <p>Interactive Power BI visualization analyzing Singapore's quality-of-life trade-offs.</p>
+                    <div class="tech-stack">
+                        <span>Power BI</span><span>DAX</span><span>Excel</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="exp-card-bento">
-                <div class="exp-info">
-                    <span class="card-label">2024 - 2026</span>
-                    <h3>Software Engineering</h3>
-                    <p class="comp-name">@ Polytechnic Student</p>
-                    <p class="exp-desc">Focusing on Full-Stack development, Database Administration, and AI integrations.</p>
-                    <div class="tech-stack"><span>Java</span><span>PHP</span><span>UI/UX</span></div>
+            <div class="project-card">
+                <div class="window-bar">
+                    <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                    <div class="file-name">cyber_heist.unity</div>
+                </div>
+                <div class="window-body">
+                    <h3>Cyber Heist</h3>
+                    <p>A fast-paced endless runner game developed in Unity featuring procedural level generation.</p>
+                    <div class="tech-stack">
+                        <span>C#</span><span>Unity 3D</span><span>Blender</span>
+                    </div>
                 </div>
             </div>
-            <section class="grid">
-                <div class="card large">
-                    <span style="color: var(--accent-color); font-weight: bold;">01 / Featured Project</span>
-                    <h3>WhatsApp AI Chatbot</h3>
-                    <p>An intelligent customer service agent built with Flask and OpenAI API to automate order fulfillment and sales inquiries.</p>
-                </div>
 
-                <div class="card tall">
-                    <h3>Expertise</h3>
-                    <ul style="list-style: none; margin-top: 15px; color: var(--text-dim);">
-                        <li style="margin-bottom: 10px;">⚡ React & Next.js</li>
-                        <li style="margin-bottom: 10px;">🎨 UI/UX Design</li>
-                        <li style="margin-bottom: 10px;">🗄️ SQL & DB Design</li>
-                        <li style="margin-bottom: 10px;">🔐 Cybersecurity</li>
+            <div class="project-card tall">
+                <div class="window-bar">
+                    <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                    <div class="file-name">expertise.json</div>
+                </div>
+                <div class="window-body">
+                    <h3>System Expertise</h3>
+                    <ul class="exp-list">
+                        <li><i class="fas fa-bolt"></i> React & Next.js</li>
+                        <li><i class="fas fa-paint-brush"></i> UI/UX Design</li>
+                        <li><i class="fas fa-database"></i> SQL & DB Design</li>
+                        <li><i class="fas fa-user-shield"></i> Cybersecurity</li>
                     </ul>
                 </div>
-
-                <div class="card">
-                    <h3>Cyber Heist</h3>
-                    <p>Time-based endless runner built in Unity.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Power BI</h3>
-                    <p>Interactive Cost of Living Dashboard.</p>
-                </div>
-
-                <div class="card large">
-                    <h3>My Universe</h3>
-                    <p>Passionate about crafting maintainable, elegant solutions. I thrive on solving complex challenges, from database schema design to building scalable frontend experiences.</p>
-                </div>
-
-            </section>
-</div>
+            </div>
+        </section>
+    </div>
 
     <footer>
         <p>© 2026 Felicia Tan. Handcrafted with &lt;code /&gt;</p>
