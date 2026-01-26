@@ -64,8 +64,7 @@ body {
 .cursor { animation: blink 1s infinite; font-weight: bold; }
 @keyframes blink { 50% { opacity: 0; } }
 
-.hero-illustration img { width: 400px; filter: grayscale(100%); transition: filter 0.3s; }
-.hero-illustration img:hover { filter: grayscale(0%); }
+.hero-illustration img { width: 400px;}
 
 /* --- Skills Grid --- */
 .section { padding:80px 0; }
@@ -198,3 +197,84 @@ footer {
 }
 
 
+/* ==========================================================================
+   CAREER SCROLLABLE TIMELINE
+   ========================================================================== */
+
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 20px 0;
+}
+
+/* Vertical timeline rail */
+.timeline-rail {
+    position: absolute;
+    left: 140px;
+    top: 30px;
+    bottom: 160px;
+    width: 2px;
+    background: #000;
+}
+
+/* Timeline block */
+.timeline-block {
+    position: relative;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 50px;
+    margin-bottom: 140px;
+}
+
+/* Year marker */
+.timeline-marker {
+    position: relative;
+    text-align: right;
+    padding-right: 40px;
+}
+
+    .timeline-marker::after {
+        content: '';
+        position: absolute;
+        right: -9px;
+        top: 12px;
+        width: 14px;
+        height: 14px;
+        background: var(--accent);
+        border: 2px solid #000;
+        border-radius: 50%;
+        z-index: 2;
+    }
+
+.year {
+    font-size: 2.4rem;
+    font-weight: 800;
+    opacity: 0.25;
+    line-height: 1;
+}
+
+/* Timeline card animation */
+.timeline-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+    .timeline-card.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+.exp-list {
+    list-style: none; /* 🟢 Removes the default bullet points */
+    padding: 0; /* 🟢 Removes the default left indentation */
+    margin: 0;
+}
+
+    .exp-list li {
+        display: flex; /* 🟢 Keeps the icon and text aligned in a row */
+        align-items: flex-start;
+        gap: 10px; /* Adds space between the icon and the text */
+        margin-bottom: 8px;
+    }
