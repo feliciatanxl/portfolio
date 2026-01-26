@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --bg-color: #ffffff;
     --text-primary: #000000;
     --text-secondary: #4b5563;
@@ -196,3 +196,5 @@ footer {
     -webkit-text-stroke: 1px #000;
     -webkit-text-fill-color: transparent;
 }
+
+
