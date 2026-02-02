@@ -638,3 +638,34 @@ footer {
         }
 }
 
+/* --- New, Cleaner Project Link Button --- */
+.project-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto; /* Ensures it sits at the bottom */
+    padding: 10px 16px;
+    background: #f8fafc; /* Very light gray background */
+    color: #334155; /* Softer black/dark gray text */
+    text-decoration: none;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #e2e8f0; /* Subtle border */
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    width: fit-content;
+}
+
+.project-link-btn i {
+    font-size: 1.1rem;
+    color: #000; /* Icon stays sharp black */
+}
+
+.project-link-btn:hover {
+    background: #fff;
+    border-color: #000;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px #000; /* Consistent shadow effect on hover */
+}
