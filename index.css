@@ -445,15 +445,54 @@ footer {
     overflow-x: auto;
 }
 
-/* --- Responsive --- */
+/* --- Refined Projects Responsive Logic --- */
 @media (max-width: 900px) {
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Force single column */
+        gap: 30px; /* Space out the stacked cards */
+        margin-top: 20px;
     }
 
     .project-card.large, .project-card.tall {
         grid-column: auto;
         grid-row: auto;
+    }
+
+    /* Adjust the window body padding for smaller screens */
+    .window-body {
+        padding: 20px 15px;
+    }
+
+    .window-body h3 {
+        font-size: 1.2rem; /* Slightly smaller title */
+    }
+
+    /* Make sure the code snippet doesn't overflow the screen */
+    .code-snippet {
+        font-size: 0.75rem;
+        padding: 10px;
+        margin-top: 15px;
+    }
+
+    /* Center the section header text for mobile */
+    .section-header {
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+        padding: 0 10px;
+    }
+
+    .section-header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Fix for the Terminal Button (GitHub link) on mobile */
+@media (max-width: 480px) {
+    .terminal-btn {
+        font-size: 0.7rem; /* Shrink text for very small phones */
+        padding: 8px 12px;
+        display: flex;
+        flex-wrap: wrap; /* Allow command to wrap if too long */
     }
 }
 
