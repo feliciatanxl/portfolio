@@ -94,12 +94,9 @@
                             <span class="filename">w360_preview.jpg</span>
                         </div>
                         <div class="preview-grid">
-                            <img src="assets/Screenshot 2024-06-05 141043.png" alt="Work Preview" width="300">
-                            <!-- <img src="assets/Screenshot 2024-05-21 165055.png" alt="Work Preview" width="300"> -->
-                            <img src="assets/Screenshot 2024-04-24 152405.png" alt="Work Preview" width="300">
-                            <!-- <img src="assets/Screenshot 2023-10-11 115627.png" alt="Work Preview" width="300"> -->
-                            <!-- <img src="assets/Screenshot 2023-09-19 135748.png" alt="Work Preview" width="300"> -->
-                            <img src="assets/Screenshot 2023-10-16 173118.png" alt="Work Preview" width="300">
+                            <img src="assets/Screenshot 2024-06-05 141043.png" class="expandable-img" alt="Work Preview" width="300">
+                            <img src="assets/Screenshot 2024-04-24 152405.png" class="expandable-img" alt="Work Preview" width="300">
+                            <img src="assets/Screenshot 2023-10-16 173118.png" class="expandable-img" alt="Work Preview" width="300">
                         </div>
                     </div>
                 </div>
@@ -107,12 +104,54 @@
         </div>
     </section>
 
+    <div id="image-lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="expanded-img">
+    </div>
+
     <footer>
         <p>© 2026 Felicia Tan. Handcrafted with &lt;code /&gt;</p>
     </footer>
 
     <script>
-        /* Scroll progress bar */
+        // --- Lightbox Logic ---
+        const lightbox = document.getElementById("image-lightbox");
+        const expandedImg = document.getElementById("expanded-img");
+        const closeBtn = document.querySelector(".close-lightbox");
+
+        // Find all expandable images and add click event
+        document.querySelectorAll(".expandable-img").forEach(img => {
+            img.addEventListener("click", (e) => {
+                lightbox.style.display = "block";
+                expandedImg.src = e.target.src;
+                // Prevent scrolling while viewing image
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close lightbox function
+        const closeLightbox = () => {
+            lightbox.style.display = "none";
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        };
+
+        closeBtn.onclick = closeLightbox;
+
+        // Close when clicking anywhere outside the image
+        lightbox.onclick = (e) => {
+            if (e.target !== expandedImg) {
+                closeLightbox();
+            }
+        };
+
+        // Close with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+                closeLightbox();
+            }
+        });
+
+        /* --- Existing Scripts --- */
         window.addEventListener("scroll", () => {
             const scrollTop = document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -120,7 +159,6 @@
             if (progress) progress.style.width = (scrollTop / height) * 100 + "%";
         });
 
-        /* Hamburger Menu Logic */
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
 
@@ -134,15 +172,6 @@
             }
         });
 
-        /* Close menu when clicking a link */
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
-            });
-        });
-
-        /* Timeline reveal animation */
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
