@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf Plant | Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">'FT<span class="cursor-blink">_</span>'</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="me.html">About Me</a></li>
+                <li><a href="experience.html">Experiences</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-btn">Contacts</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 900px; padding-bottom: 80px;">
+
+        <header style="margin-top: 50px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 10px; line-height: 1.1; margin-top: 0;">Leaf Plant</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); font-family: 'Fira Code', monospace; margin: 0;">Automated AI Outreach Layer for AgriTech</p>
+            </div>
+
+            <a href="projects.html" style="text-decoration: none; color: #000; font-family: 'Fira Code', monospace; font-size: 0.9rem; font-weight: 600; background: #f8fafc; padding: 10px 18px; border-radius: 8px; border: 2px solid #000; box-shadow: 3px 3px 0px #000; transition: all 0.2s ease;" onmouseover="this.style.transform='translate(-2px, -2px)'; this.style.boxShadow='5px 5px 0px var(--accent)';" onmouseout="this.style.transform='translate(0, 0)'; this.style.boxShadow='3px 3px 0px #000';">
+                cd ../projects <i class="fas fa-arrow-right"></i>
+            </a>
+        </header>
+
+        <div class="project-card" style="padding: 0; overflow: hidden; margin-bottom: 40px;">
+            <div class="window-bar">
+                <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                <div class="file-name">demo_recording.mp4</div>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Project Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+
+            <div class="project-details">
+                <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 15px;">The Problem</h2>
+                <p>The AgriTech SME was facing a bottleneck in customer engagement. Managing high-intent leads manually was leading to missed opportunities, and increasing headcount wasn't a scalable solution. They needed a way to personalize outreach without spending hours drafting individual messages.</p>
+
+                <h2 style="font-size: 1.5rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px;">The Solution</h2>
+                <p>I developed a complete CRUD dashboard built on <strong>Python Flask</strong> and <strong>SQLite</strong>. The system pulls customer data, utilizes <strong>OpenAI's GPT-4</strong> to segment customers based on their interaction history, and automatically generates highly personalized messaging templates.</p>
+                <p>By applying Object-Oriented Programming (OOP) principles, the backend is modular and easily scalable for future API integrations.</p>
+
+                <div class="project-card" style="padding: 0; overflow: hidden; margin-top: 25px; margin-bottom: 25px;">
+
+                    <div class="window-bar" style="display: flex; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                            <div class="file-name" id="carousel-filename" style="margin: 0;">1_dashboard_ui.png</div>
+                        </div>
+
+                        <div style="display: flex; gap: 15px; margin-right: 5px;">
+                            <button onclick="changeSlide(-1)" style="background: none; border: none; cursor: pointer; font-family: 'Fira Code', monospace; font-weight: 800; font-size: 1.1rem; padding: 0; color: #000;">&lt;</button>
+                            <button onclick="changeSlide(1)" style="background: none; border: none; cursor: pointer; font-family: 'Fira Code', monospace; font-weight: 800; font-size: 1.1rem; padding: 0; color: #000;">&gt;</button>
+                        </div>
+                    </div>
+
+                    <div style="padding: 10px; background: #e2e8f0; position: relative;">
+
+                        <div class="img-slide" style="display: block; animation: fadeIn 0.4s;">
+                            <div style="width: 100%; height: 300px; background: #cbd5e1; border: 2px dashed #94a3b8; display: flex; align-items: center; justify-content: center; font-family: 'Fira Code', monospace; color: #475569; border-radius: 4px; text-align: center; padding: 20px;">
+                                [Slide 1: Replace with your Dashboard Screenshot]
+                            </div>
+                        </div>
+
+                        <div class="img-slide" style="display: none; animation: fadeIn 0.4s;">
+                            <div style="width: 100%; height: 300px; background: #cbd5e1; border: 2px dashed #94a3b8; display: flex; align-items: center; justify-content: center; font-family: 'Fira Code', monospace; color: #475569; border-radius: 4px; text-align: center; padding: 20px;">
+                                [Slide 2: Replace with OpenAI Flow or Architecture]
+                            </div>
+                        </div>
+
+                        <div class="img-slide" style="display: none; animation: fadeIn 0.4s;">
+                            <div style="width: 100%; height: 300px; background: #cbd5e1; border: 2px dashed #94a3b8; display: flex; align-items: center; justify-content: center; font-family: 'Fira Code', monospace; color: #475569; border-radius: 4px; text-align: center; padding: 20px;">
+                                [Slide 3: Replace with final WhatsApp Output]
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <h2 style="font-size: 1.5rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px;">Core Logic Snippet</h2>
+                <div class="code-snippet">
+<pre><code><span class="k">import</span> openai
+<span class="k">from</span> flask <span class="k">import</span> Flask, render_template, request
+
+<span class="v">app</span> = Flask(<span class="s">"WhatsApp_AI"</span>)
+
+<span class="k">def</span> <span class="v">generate_outreach</span>(customer_data):
+                    <span class="v">response</span> = openai.ChatCompletion.create(
+                    <span class="v">model</span>=<span class="s">"gpt-4"</span>,
+                    <span class="v">messages</span>=[
+            {<span class="s">"role"</span>: <span class="s">"system"</span>, <span class="s">"content"</span>: <span class="s">"You are an AgriTech sales assistant."</span>},
+            {<span class="s">"role"</span>: <span class="s">"user"</span>, <span class="s">"content"</span>: <span class="v">f"Draft an outreach for {customer_data}"</span>}
+        ]
+    )
+                    <span class="k">return</span> <span class="v">response</span>.choices[0].message.content</code></pre>
+                </div>
+            </div>
+
+            <div>
+                <div class="project-card" style="padding: 25px;">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 15px;">Tech Stack</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 25px;">
+                        <span class="code-name">Python</span>
+                        <span class="code-name">Flask</span>
+                        <span class="code-name">SQLite</span>
+                        <span class="code-name">OpenAI API</span>
+                        <span class="code-name">Bootstrap</span>
+                    </div>
+
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Timeline</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 25px;">Oct 2025 - Feb 2026</p>
+
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Links</h3>
+
+                    <a href="https://github.com/feliciatanxl/Leaf-Plant" target="_blank" class="terminal-btn" style="width: 100%; justify-content: center; box-sizing: border-box;">
+                        <i class="fab fa-github"></i> View Repo
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Felicia Tan. Handcrafted with &lt;code /&gt;</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Script
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // ==========================================
+        // Image Carousel Script
+        // ==========================================
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".img-slide");
+        const filenameDisplay = document.getElementById("carousel-filename");
+
+        // These file names will change in the header bar as you click through!
+        const fileNames = ["1_dashboard_ui.png", "2_ai_segmentation.png", "3_whatsapp_output.png"];
+
+        function changeSlide(n) {
+            // Hide current slide
+            slides[slideIndex].style.display = "none";
+
+            // Calculate new index (looping around when it reaches the end/beginning)
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+
+            // Show new slide and update filename text
+            slides[slideIndex].style.display = "block";
+            filenameDisplay.innerText = fileNames[slideIndex];
+        }
+    </script>
+</body>
+</html>

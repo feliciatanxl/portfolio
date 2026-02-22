@@ -34,116 +34,94 @@
             <p class="contact-text">A collection of technical deployments and creative builds.</p>
         </header>
 
-        <section class="projects-grid">
-            
-            <div class="project-card large">
-                <div class="window-bar">
-                    <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-                    <div class="file-name">whatsapp_bot.py</div>
-                </div>
-                <div class="window-body">
-                    <div class="project-info">
-                        <span class="status-tag success">200 OK</span>
+        <section class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Oct 2025 - Feb 2026</div>
+                <div class="project-card">
+                    <div class="window-bar">
+                        <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <div class="file-name">whatsapp_bot.py</div>
+                    </div>
+                    <div class="window-body">
+                        <span class="status-tag success">Active</span>
                         <h3>Leaf Plant</h3>
-                        <p>Developed an automated outreach layer for an AgriTech SME to scale customer engagement. Built with Python Flask and OOP principles, the system leverages AI to segment customers and generate personalized messaging templates. It features a complete CRUD dashboard using SQLite and Bootstrap, enabling teams to manage high-intent leads and automate workflows without increasing manual headcount.</p>
-
-                        <div class="code-snippet">
-                            <pre><code><span class="k">import</span> openai
-<span class="k">from</span> flask <span class="k">import</span> Flask
-
-<span class="v">app</span> = Flask(<span class="s">"WhatsApp_AI"</span>)
-<span class="v">response</span> = openai.ChatCompletion.create(
-                            <span class="v">model</span>=<span class="s">"gpt-4"</span>,
-                            <span class="v">messages</span>=[<span class="v">user_query</span>]
-)</code></pre>
-                        </div>
-                        
-                        <a href="https://github.com/feliciatanxl/Leaf-Plant" target="_blank" class="terminal-btn">
-                            <span class="prompt">$</span> git checkout <span class="repo-name">source_code</span>
+                        <p>Automated outreach for AgriTech SME using AI customer segmentation and Python Flask.</p>
+                        <a href="leafplant.html" class="terminal-btn">
+                            <span class="prompt">$</span> git log --view
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="window-bar">
-                    <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-                    <div class="file-name">meijiri.fig</div>
-                </div>
-                <div class="window-body" style="display: flex; flex-direction: column; height: 100%;">
-                    <h3>Meijiri Application</h3>
-                    <p>Designed to solve F&B manpower shortages, Meijiri is a seamless self-ordering kiosk and mobile app. It streamlines the customer journey through cashless payments and intuitive food customization.</p>
-                    <div class="tech-stack" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
-                        <span style="border: 1px solid #000; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px;">Figma</span>
-                        <span style="border: 1px solid #000; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px;">Prototyping</span>
-                        <span style="border: 1px solid #000; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px;">Design Thinking</span>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Apr 2025 - Aug 2025</div>
+
+                <div style="display: flex; flex-direction: column; gap: 40px;">
+
+                    <div class="project-card">
+                        <div class="window-bar">
+                            <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                            <div class="file-name">index.html</div>
+                        </div>
+                        <div class="window-body">
+                            <h3>Titans Badminton Website</h3>
+                            <p>Responsive school CCA portal built with Bootstrap 5 and UX-driven navigation.</p>
+                            <a href="titans.html" class="terminal-btn">View Details</a>
+                        </div>
                     </div>
-                    
-                    <a href="https://www.figma.com/proto/zxJHCJkydTtk30G1Kr0scT/Group-4-Wireframe-Project?node-id=887-33433&starting-point-node-id=197%3A821&t=abbRhbKOx80F3zXW-1" target="_blank" class="project-link-btn">
-                        <i class="fab fa-figma"></i> View Prototype
-                    </a>
+
+                    <div class="project-card">
+                        <div class="window-bar">
+                            <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                            <div class="file-name">nirvana_cx.fig</div>
+                        </div>
+                        <div class="window-body">
+                            <h3>Nirvana Mobile CX</h3>
+                            <p>CX Transformation Plan using Design Thinking to improve user retention via wireframing.</p>
+                            <a href="nirvana.html" class="terminal-btn">View Wireframe</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="window-bar">
-                    <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-                    <div class="file-name">main.dart</div>
-                </div>
-                <div class="window-body" style="display: flex; flex-direction: column; height: 100%;">
-                    <h3>Food Diary App</h3>
-                    <p>A cross-platform Food Diary app built with Flutter. It features photo logging, local data persistence using SQLite, and built-in health tools like a BMI calculator and calorie tracker.</p>
-                    <div class="tech-stack" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
-                        <span style="border: 1px solid #000; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px;">Flutter</span>
-                        <span style="border: 1px solid #000; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px;">Dart</span>
-                        <span style="border: 1px solid #000; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px;">SQLite</span>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Oct 2024 - Dec 2024</div>
+                <div class="project-card">
+                    <div class="window-bar">
+                        <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <div class="file-name">main.dart</div>
                     </div>
-
-                    <a href="https://github.com/feliciatanxl/ITE_MSD_Project" target="_blank" class="project-link-btn">
-                        <i class="fab fa-github"></i> Source Code
-                    </a>
+                    <div class="window-body">
+                        <h3>Food Diary App</h3>
+                        <p>Cross-platform mobile application with SQLite persistence and health tracking tools.</p>
+                        <a href="fooddiary.html" class="terminal-btn">Read Case Study</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="window-bar">
-                    <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-                    <div class="file-name">index.html</div>
-                </div>
-                <div class="window-body" style="display: flex; flex-direction: column; height: 100%;">
-                    <h3>Titans Badminton CCA Website</h3>
-                    <p>Designed and developed a responsive website to market a School CCA Club. Focusing on User Experience (UX) principles, the site utilizes Bootstrap 5 for consistent layout across devices, accessible navigation, and interactive JavaScript elements to streamline the new member sign-up process.</p>
-                    <div class="tech-stack" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
-                        <span style="border: 1px solid #000; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px;">HTML/CSS/JS</span>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">July 2024 - Sep 2024</div>
+                <div class="project-card">
+                    <div class="window-bar">
+                        <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
+                        <div class="file-name">meijiri.fig</div>
                     </div>
-
-                    <a href="https://github.com/Bharg3507C/ICA-2" target="_blank" class="project-link-btn">
-                        <i class="fas fa-external-link-alt"></i> Visit Live Site
-                    </a>
+                    <div class="window-body">
+                        <h3>Meijiri Application</h3>
+                        <p>F&B self-ordering kiosk prototype designed to solve local manpower shortages.</p>
+                        <a href="meijiri.html" class="terminal-btn">View Prototype</a>
+                    </div>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="window-bar">
-                    <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-                    <div class="file-name">wireframe.fig</div>
-                </div>
-                <div class="window-body" style="display: flex; flex-direction: column; height: 100%;">
-                    <h3>Nirvana Mobile</h3>
-                    <p>Spearheaded a Customer Experience (CX) Transformation Plan for 'Nirvana Mobile' to address service gaps. Utilized Design Thinking methodologies—including empathy interviews, persona creation, and customer journey mapping—to identify pain points and prototype digital solutions for improved user retention.</p>
-                    <div class="tech-stack" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
-                    <span style="border: 1px solid #000; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px;">Design Thinking</span>
-                    <span style="border: 1px solid #000; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px;">User Research</span>
-                    <span style="border: 1px solid #000; padding: 2px 8px; font-size: 0.75rem; border-radius: 4px;">Wireframing</span>
-                    </div>
-
-                    <a href="https://www.figma.com/proto/gLbDiwQ1UBHq7DW5cj2E5e/BIE-Prototype?node-id=34-3025&p=f&t=GZ7ejx3Y30eW4h1n-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A50&starting-point-node-id=28%3A969" target="_blank" class="project-link-btn">
-                        <i class="fas fa-file-alt"></i> View Wireframe
-                    </a>
-                </div>
-            </div>
-
         </section>
+
     </div>
 
     <footer>
