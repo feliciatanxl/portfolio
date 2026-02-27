@@ -334,16 +334,23 @@ body {
 }
 
 .code-snippet {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: #1e1e1e;
+    color: #d4d4d4;
     padding: 15px;
-    border-radius: 8px;
-    margin: 20px 0;
+    border-radius: 6px;
     font-family: 'Fira Code', monospace;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    margin-top: 20px;
     overflow-x: auto;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
+.code-snippet pre {
+    margin: 0;
+    white-space: pre-wrap; 
+    word-break: break-word;
+}
 .k {
     color: #d946ef;
 }
@@ -1139,8 +1146,41 @@ footer {
     }
 
 @media (max-width: 800px) {
+    
+    header[style*="display: flex"] {
+        flex-wrap: nowrap !important;
+        align-items: flex-start !important; 
+        gap: 15px !important;
+    }
+
+    header[style*="display: flex"] a {
+        white-space: nowrap !important; 
+        padding: 8px 12px !important;
+        font-size: 0.75rem !important;
+        margin-top: 5px !important; 
+    }
+
+    header h1[style*="font-size: 3rem"] {
+        font-size: 1.8rem !important;
+    }
+    
+    header p[style*="font-size: 1.2rem"] {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+    }
+
     div[style*="grid-template-columns: 2fr 1fr"] {
         grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .img-slide > div, .img-slide img {
+        height: auto !important;
+        min-height: 200px;
+    }
+    
+    .project-details + div > .project-card {
+        padding: 20px !important;
     }
 }
 /* ==========================================================================
