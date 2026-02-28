@@ -1,4 +1,7 @@
-﻿:root {
+﻿/* *, *::before, *::after {
+    box-sizing: border-box;
+} */
+:root {
     --bg-color: #ffffff;
     --text-primary: #000000;
     --text-secondary: #4b5563;
@@ -1243,5 +1246,29 @@ footer {
 @media (max-width: 900px) {
     .about-grid {
         grid-template-columns: 1fr !important;
+    }
+}
+
+/* ==========================================================================
+   ACHIEVEMENTS PAGE (achievements.html) - 2 COLUMN LAYOUT
+   ========================================================================== */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Changed to 2 equal columns */
+    gap: 30px;
+}
+
+/* Makes the locked banner take up both columns */
+.achievement-card.wide {
+    grid-column: span 2;
+}
+
+/* Mobile View: Force all cards to stack in 1 single column */
+@media (max-width: 900px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+    .achievement-card.wide {
+        grid-column: auto;
     }
 }
