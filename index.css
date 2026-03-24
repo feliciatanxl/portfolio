@@ -853,17 +853,19 @@ footer {
 
     
     .preview-grid {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+        flex-direction: column !important;
     }
 
         .preview-grid img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            display: block;
-        }
+        width: 100% !important;
+        max-width: 100% !important;
+        border-right: none !important; 
+        border-bottom: 2px solid #000 !important;
+    }
+
+    .preview-grid img:last-child {
+        border-bottom: none !important;
+    }
 
     .exp-body h3 {
         font-size: 1.2rem;
@@ -1361,18 +1363,30 @@ footer {
 @media (max-width: 850px) {
     .dropdown-content {
         position: static;
-        display: block; 
+        display: none; 
         box-shadow: none;
-        border: none;
-        border-left: 2px solid var(--accent);
-        margin: 10px 0 10px 20px;
-        min-width: 100%;
+        border: none; 
+        margin: 10px auto; 
+        width: 100%;
         background: transparent;
     }
     .dropdown-content::before {
-        display: none;
+        display: none; 
     }
     .dropdown-content a {
         padding: 10px 15px;
+        text-align: center; 
+        border-bottom: none; 
+    }
+    .dropdown-content a:hover {
+        padding-left: 15px; 
+        background-color: transparent;
+    }
+    div[style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important; 
+    }
+
+    div[style*="grid-template-columns: repeat(3, 1fr)"] > div {
+        height: 250px !important; 
     }
 }
