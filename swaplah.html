@@ -58,9 +58,9 @@
                 <p>Polytechnic students lack a dedicated, secure platform to safely trade pre-owned campus essentials like textbooks, lab equipment, and electronics. Existing public marketplaces carry risks of scams and lack campus-specific trust mechanisms.</p>
                 <p>From a software engineering perspective, the core challenge of this academic project was to build the marketplace strictly adhering to <strong>Agile and industry-standard DevOps methodologies</strong>—moving beyond basic coding to enforce rigorous version control, automated testing, and security compliance.</p>
 
-                <h2 style="font-size: 1.5rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px;">The Solution</h2>
+                <h2 style="font-size: 1.5rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px;">The Solution & Team Dynamics</h2>
                 <p style="margin-bottom: 30px; line-height: 1.6; color: var(--text-secondary);">
-                    I co-developed a full-stack web application powered by a <strong>Python Flask REST API</strong> and an SQLite database. The platform features strict NYP-student email authentication, soft-delete item listings, offer negotiations, and a review system. To ensure high code quality, I helped engineer a <strong>GitLab CI/CD pipeline</strong> that blocks code merges if they fail our automated unit tests, Selenium UI tests, or SAST security scans.
+                    Working within a collaborative Agile development team, we engineered a full-stack solution. The platform is powered by a <strong>Python Flask REST API</strong> and an SQLite database, featuring strict NYP-student email authentication, soft-delete item listings, offer negotiations, and a review system. Because our backend codebase is secured in a private academic GitLab repository, this case study highlights the user interface and my specific technical contributions to the sprint cycles.
                 </p>
 
                 <div class="project-card" style="padding: 0; overflow: hidden; margin-top: 35px; margin-bottom: 25px;">
@@ -68,7 +68,7 @@
                     <div class="window-bar" style="display: flex; align-items: center; justify-content: space-between;">
                         <div style="display: flex; align-items: center; gap: 15px;">
                             <div class="dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-                            <div class="file-name" id="carousel-filename" style="margin: 0;">1_swaplah_marketplace.png</div>
+                            <div class="file-name" id="carousel-filename" style="margin: 0;">1_website_home.png</div>
                         </div>
 
                         <div style="display: flex; gap: 15px; margin-right: 5px;">
@@ -91,6 +91,13 @@
 
                     </div>
                 </div>
+                
+                <h2 style="font-size: 1.5rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px;">My Key Contributions</h2>
+                <ul style="color: var(--text-secondary); line-height: 1.6; padding-left: 20px; margin-bottom: 30px;">
+                    <li style="margin-bottom: 10px;"><strong>AI-Assisted Development:</strong> Leveraged AI coding tools for rapid frontend prototyping, demonstrating modern prompt engineering and rigorous code-review practices.</li>
+                    <li style="margin-bottom: 10px;"><strong>Automated Testing:</strong> Developed comprehensive Unit and UI test scripts using Selenium to ensure 60%+ code coverage prior to merge requests.</li>
+                    <li style="margin-bottom: 10px;"><strong>Pipeline Integration:</strong> Collaborated on configuring the `.gitlab-ci.yml` pipeline to enforce automated linting, testing, and SAST security scans.</li>
+                </ul>
 
                 <h2 style="font-size: 1.5rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px;">REST API Snippet</h2>
                 <div class="code-snippet">
@@ -125,21 +132,22 @@
                         <span class="code-name">Python Flask</span>
                         <span class="code-name">SQLite</span>
                         <span class="code-name">GitLab CI/CD</span>
+                        <span class="code-name">AI Code Gen</span>
                         <span class="code-name">Selenium</span>
                         <span class="code-name">REST API</span>
                         <span class="code-name">Bootstrap 5</span>
                     </div>
 
-                    <!-- <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Role</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 25px;">Full-Stack / DevOps Engineer</p> -->
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Role</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 25px;">Full-Stack Engineer</p>
 
                     <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Timeline</h3>
                     <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 25px;">Apr 2026 - Present</p>
 
                     <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Links</h3>
 
-                    <a href="https://gitlab.com/yourusername/swaplah" target="_blank" class="terminal-btn" style="width: 100%; justify-content: center; box-sizing: border-box;">
-                        <i class="fab fa-gitlab"></i> View GitLab Repo
+                    <a href="https://github.com/feliciatanxl/SwapLah" target="_blank" class="terminal-btn" style="width: 100%; justify-content: center; box-sizing: border-box;">
+                        <i class="fab fa-github"></i> View GitHub Repo
                     </a>
                 </div>
             </div>
@@ -152,9 +160,6 @@
     </footer>
 
     <script>
-        // ==========================================
-        // Hamburger Menu Script
-        // ==========================================
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
 
@@ -167,27 +172,20 @@
                 icon.classList.replace('fa-times', 'fa-bars');
             }
         });
-
-        // ==========================================
-        // Auto-Moving Image Carousel Script
-        // ==========================================
         let slideIndex = 0;
         const slides = document.querySelectorAll(".img-slide");
         const filenameDisplay = document.getElementById("carousel-filename");
         let autoSlideTimer;
 
-        // Array of filenames to display in the terminal header
         const fileNames = [
-            "1_swaplah_marketplace.png", 
-            "2_api_integration.png", 
-            "3_gitlab_cicd_pipeline.png"
+            "1_website_home.png", 
+            "2_marketplace_ui.png", 
+            "3_automated_testing.png"
         ];
 
         function updateSlide() {
-            // Hide all slides
             slides.forEach(slide => slide.style.display = "none");
             
-            // Show the active slide and update text
             slides[slideIndex].style.display = "block";
             filenameDisplay.innerText = fileNames[slideIndex];
         }
@@ -195,7 +193,7 @@
         function changeSlide(n) {
             slideIndex = (slideIndex + n + slides.length) % slides.length;
             updateSlide();
-            resetTimer(); // Reset the auto-play so it doesn't instantly change after a click
+            resetTimer(); 
         }
 
         function autoSlide() {
@@ -205,13 +203,12 @@
 
         function resetTimer() {
             clearInterval(autoSlideTimer);
-            autoSlideTimer = setInterval(autoSlide, 3500); // Changes image every 3.5 seconds
-        }
+            autoSlideTimer = setInterval(autoSlide, 3500);
 
-        // Start the auto-slider when the page loads
         if(slides.length > 0) {
             resetTimer();
         }
+    }
     </script>
 </body>
 </html>
